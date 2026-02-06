@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { FaHeart, FaShoppingCart } from "react-icons/fa";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../redux/slices/cartSlice";
+import { addToWishList } from "../redux/slices/wishlistSlice";
 
 function AllProducts() {
   const baseUrl = "https://dummyjson.com/products";
@@ -56,6 +57,7 @@ function AllProducts() {
                       <Button
                         variant="light"
                         className="position-absolute top-0 end-0 m-3 rounded-circle shadow-sm"
+                         onClick={() => dispatch(addToWishList(item))}
                       >
                         <FaHeart className="text-danger" />
                       </Button>
