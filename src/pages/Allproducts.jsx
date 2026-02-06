@@ -2,10 +2,13 @@ import React, { useEffect, useState } from "react";
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { FaHeart, FaShoppingCart } from "react-icons/fa";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../redux/slices/cartSlice";
 
 function AllProducts() {
   const baseUrl = "https://dummyjson.com/products";
   const [products, setProducts] = useState([]);
+  const dispatch = useDispatch()
 
   const getData = async () => {
     const response = await fetch(baseUrl);
@@ -72,6 +75,7 @@ function AllProducts() {
                       <Button
                         variant="dark"
                         className="w-100 rounded-pill d-flex align-items-center justify-content-center gap-2"
+                        onClick={() => dispatch(addToCart(item))}
                       >
                         <FaShoppingCart />
                         Add to Cart
