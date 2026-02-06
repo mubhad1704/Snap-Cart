@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Button, Card, Col, Container, Row } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import { addToCart } from "../redux/slices/cartslice";
+import { addToCart } from "../redux/slices/cartSlice";
 import { deleteFromWishlist } from "../redux/slices/wishlistSlice";
 import { FaHeartBroken, FaShoppingCart } from "react-icons/fa";
 

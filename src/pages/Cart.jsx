@@ -8,7 +8,7 @@ import {
   decreaseQuantity,
   deleteFromCart,
   increaseQuantity,
-} from "../redux/slices/cartslice";
+} from "../redux/slices/cartSlice";
 
 function Cart() {
   const cartArray = useSelector((state) => state.cart);
